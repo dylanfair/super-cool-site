@@ -25,7 +25,7 @@
 	}
 </script>
 
-<div class="h-60 flex space-x-5 justify-center items-center">
+<div class="h-screen flex space-x-5 justify-center items-center">
 	<div id="section1" class="absolute flex space-x-5 justify-center items-center" class:animate-slide-out={activate_slide_out} class:invisible={first_hide}>
 		<div class="space-y-5 text-center">
 			<h1 class="h1">oh, hey</h1>
@@ -43,6 +43,6 @@
 		</div>
 	</div>
 </div>
-<div class="flex justify-center items-center">
+<div class="absolute left-0 top-0">
 	<button on:click={reset}>Reset</button>
 </div>
