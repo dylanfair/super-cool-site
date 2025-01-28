@@ -12,25 +12,61 @@
 
   var section1 = new Section(1, false, false, false);
   var section2 = new Section(2, true, false, false);
+  var section3 = new Section(3, true, false, false);
+  var section4 = new Section(4, true, false, false);
+  var section5 = new Section(5, true, false, false);
 
 	function reset() {
     section1 = new Section(1, false, false, false);
     section2 = new Section(2, true, false, false);
+    section3 = new Section(3, true, false, false);
+    section4 = new Section(4, true, false, false);
+    section5 = new Section(5, true, false, false);
 	}
 
-	function first_transition(sec1, sec2) {
-    console.log("Doing a transition");
-    console.log(sec1);
-    console.log(sec2);
-		sec1.slide_out = true;
+  // just hard coding this because idk how any of this works
+	function first_transition() {
+    console.log("First transition");
+		section1.slide_out = true;
 
-    if (!sec1.hide) {
-      setTimeout(() => {sec1.hide = true; }, 1000);
+    if (!section1.hide) {
+      setTimeout(() => {section1.hide = true; }, 1000);
     }
-		sec2.hide = false;
-		sec2.slide_in = true;
-    console.log(sec1);
-    console.log(sec2);
+		section2.hide = false;
+		section2.slide_in = true;
+	}
+
+	function second_transition() {
+    console.log("Second transition");
+		section2.slide_out = true;
+
+    if (!section2.hide) {
+      setTimeout(() => {section2.hide = true; }, 1000);
+    }
+		section3.hide = false;
+		section3.slide_in = true;
+	}
+
+	function third_transition() {
+    console.log("Third transition");
+		section3.slide_out = true;
+
+    if (!section3.hide) {
+      setTimeout(() => {section3.hide = true; }, 1000);
+    }
+		section4.hide = false;
+		section4.slide_in = true;
+	}
+
+	function fourth_transition() {
+    console.log("Fourth transition");
+		section4.slide_out = true;
+
+    if (!section4.hide) {
+      setTimeout(() => {section4.hide = true; }, 1000);
+    }
+		section5.hide = false;
+		section5.slide_in = true;
 	}
 </script>
 
@@ -42,15 +78,43 @@
 		</div>
 		<div class="space-y-5 text-center">
 			<div class="animate-bounce variant-filled-secondary rounded-full">
-				<button on:click={() => first_transition(section1, section2)}>Click me!</button>
+				<button on:click={() => first_transition()}>Click me!</button>
 			</div>
 			<p>(You should really click it)</p>
 		</div>
 	</div>
 
-	<div id="section2" class="absolute" class:animate-slide-in={section2.slide_in} class:invisible={section2.hide}>
+	<div id="section2" class="absolute" class:animate-slide-in={section2.slide_in} class:invisible={section2.hide} class:animate-slide-out={section2.slide_out}>
 		<div class="space-y-5 text-center">
-			<h1 class="h1">I'm a different section</h1>
+			<h1 class="h1">I'm the second section</h1>
+			<div class="animate-bounce variant-filled-secondary rounded-full">
+				<button on:click={() => second_transition()}>Click me!</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="section3" class="absolute" class:animate-slide-in={section3.slide_in} class:invisible={section3.hide} class:animate-slide-out={section3.slide_out}>
+		<div class="space-y-5 text-center">
+			<h1 class="h1">I'm the third section</h1>
+			<div class="animate-bounce variant-filled-secondary rounded-full">
+				<button on:click={() => third_transition()}>Click me!</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="section4" class="absolute" class:animate-slide-in={section4.slide_in} class:invisible={section4.hide} class:animate-slide-out={section4.slide_out}>
+		<div class="space-y-5 text-center">
+			<h1 class="h1">I'm the fourth section</h1>
+			<div class="animate-bounce variant-filled-secondary rounded-full">
+				<button on:click={() => fourth_transition()}>Click me!</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="section5" class="absolute" class:animate-slide-in={section5.slide_in} class:invisible={section5.hide} class:animate-slide-out={section5.slide_out}>
+		<div class="space-y-5 text-center">
+			<h1 class="h1">I'm the fifth section</h1>
+			<h2 class="h2">All done!</h2>
 		</div>
 	</div>
 </div>
