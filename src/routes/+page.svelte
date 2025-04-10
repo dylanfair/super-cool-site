@@ -1,4 +1,6 @@
 <script lang="ts">
+	const imgUrl = new URL('../../static/images/benji_bed_solo.jpg', import.meta.url).href;
+
 	class Section {
 		id: number;
 		hide: boolean;
@@ -18,6 +20,8 @@
 	let section3 = new Section(3, true, false, false);
 	let section4 = new Section(4, true, false, false);
 	let section5 = new Section(5, true, false, false);
+	let section6 = new Section(6, true, false, false);
+	let no_button_shake = false;
 
 	function reset() {
 		section1 = new Section(1, false, false, false);
@@ -25,6 +29,7 @@
 		section3 = new Section(3, true, false, false);
 		section4 = new Section(4, true, false, false);
 		section5 = new Section(5, true, false, false);
+		section6 = new Section(6, true, false, false);
 	}
 
 	// just hard coding this because idk how any of this works
@@ -79,6 +84,27 @@
 		section5.hide = false;
 		section5.slide_in = true;
 	}
+
+	function fifth_transition() {
+		console.log('Fifth transition');
+		section5.slide_out = true;
+
+		if (!section5.hide) {
+			setTimeout(() => {
+				section5.hide = true;
+			}, 1000);
+		}
+		section6.hide = false;
+		section6.slide_in = true;
+	}
+
+	function shake_button() {
+		console.log('Shaking button');
+		no_button_shake = true;
+		setTimeout(() => {
+			no_button_shake = false;
+		}, 1000);
+	}
 </script>
 
 <div class="h-screen flex space-x-5 justify-center items-center">
@@ -107,6 +133,7 @@
 		class:animate-slide-out={section2.slide_out}
 	>
 		<div class="space-y-5 text-center">
+			<img alt="benji" src={imgUrl} width="200" height="300" />
 			<h1 class="h1">I'm the second section</h1>
 			<div class="animate-bounce variant-filled-secondary rounded-full">
 				<button on:click={() => second_transition()} class="w-full">Click me!</button>
@@ -123,7 +150,7 @@
 	>
 		<div class="space-y-5 text-center">
 			<h1 class="h1">I'm the third section</h1>
-			<div class="animate-bounce variant-filled-secondary rounded-full">
+			<div class="variant-filled-secondary rounded-full">
 				<button on:click={() => third_transition()} class="w-full">Click me!</button>
 			</div>
 		</div>
@@ -138,7 +165,7 @@
 	>
 		<div class="space-y-5 text-center">
 			<h1 class="h1">I'm the fourth section</h1>
-			<div class="animate-bounce variant-filled-secondary rounded-full">
+			<div class="variant-filled-secondary rounded-full">
 				<button on:click={() => fourth_transition()} class="w-full">Click me!</button>
 			</div>
 		</div>
@@ -152,8 +179,25 @@
 		class:animate-slide-out={section5.slide_out}
 	>
 		<div class="space-y-5 text-center">
-			<h1 class="h1">I'm the fifth section</h1>
-			<h2 class="h2">All done!</h2>
+			<h1 class="h1">Will you marry me?</h1>
+			<div class="animate-bounce variant-filled-success rounded-full">
+				<button on:click={() => fifth_transition()} class="w-full">Yes ❤️</button>
+			</div>
+			<div class="variant-filled-error rounded-full" class:animate-shake={no_button_shake}>
+				<button id="no_button" on:click={() => shake_button()} class="w-full">No 👎</button>
+			</div>
+		</div>
+	</div>
+
+	<div
+		id="section6"
+		class="absolute"
+		class:animate-slide-in={section6.slide_in}
+		class:invisible={section6.hide}
+		class:animate-slide-out={section6.slide_out}
+	>
+		<div class="space-y-5 text-center">
+			<h1 class="h1">yay :)</h1>
 		</div>
 	</div>
 </div>

@@ -2,57 +2,68 @@ import { join } from 'path'
 import type { Config } from 'tailwindcss'
 import { skeleton } from '@skeletonlabs/tw-plugin'
 
-const plugin = require('tailwindcss/plugin')
+const plugin = require('tailwindcss/plugin');
 
 export default {
-	darkMode: 'class',
-	content: ['./src/**/*.{html,js,svelte,ts}', join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')],
-	theme: {
-		extend: {
+  darkMode: 'class',
+  content: ['./src/**/*.{html,js,svelte,ts}', join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')],
+  theme: {
+    extend: {
       keyframes: {
         slide_out: {
-          '0%' : {
+          '0%': {
             transform: 'translateX(0px)',
             opacity: '1',
           },
-          '100%' : {
+          '100%': {
             transform: 'translateX(-300px)',
             opacity: '0',
           },
         },
-
         slide_in: {
-          '0%' : {
+          '0%': {
             transform: 'translateX(300px)',
             opacity: '0',
           },
-          '100%' : {
+          '100%': {
             transform: 'translateX(0px)',
             opacity: '1',
           },
         },
-        
+        shake: {
+          '0%, 50%, 100%': {
+            transform: 'rotate(0deg)',
+          },
+          '20%': {
+            transform: 'rotate(-5deg)',
+          },
+          '70%': {
+            transform: 'rotate(5deg)',
+          }
+        }
+
       },
       animation: {
         'bounce-short': 'bounce 1s ease-in-out 1',
         'spin-slow': 'spin 3s linear infinite',
         'slide-out': 'slide_out 1s ease',
-        'slide-in': 'slide_in 2s ease'
+        'slide-in': 'slide_in 2s ease',
+        'shake': 'shake 0.3s linear 2',
       }
     },
-	},
-	plugins: [
-		skeleton({
-			themes: {
-				preset: [
-					{
-						name: 'modern',
-						enhancements: true,
-					},
-				],
-			},
-		}),
-    plugin(({matchUtilities, theme}) => {
+  },
+  plugins: [
+    skeleton({
+      themes: {
+        preset: [
+          {
+            name: 'modern',
+            enhancements: true,
+          },
+        ],
+      },
+    }),
+    plugin(({ matchUtilities, theme }) => {
       matchUtilities(
         {
           "animation-duration": (value) => {
@@ -66,5 +77,5 @@ export default {
         }
       );
     }),
-	],
+  ],
 } satisfies Config;
