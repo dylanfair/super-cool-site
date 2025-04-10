@@ -22,6 +22,10 @@
 	let section5 = new Section(5, true, false, false);
 	let section6 = new Section(6, true, false, false);
 	let no_button_shake = false;
+	let no_counter = 0;
+	let hide_no_text = true;
+	let hide_no_button = false;
+	let no_text = 'Hey!!!';
 
 	function reset() {
 		section1 = new Section(1, false, false, false);
@@ -99,11 +103,24 @@
 	}
 
 	function shake_button() {
-		console.log('Shaking button');
+		no_counter += 1;
 		no_button_shake = true;
 		setTimeout(() => {
 			no_button_shake = false;
 		}, 1000);
+		if (no_counter > 0) {
+			hide_no_text = false;
+		}
+		if (no_counter > 1) {
+			no_text = 'Cut it out!!';
+		}
+		if (no_counter > 2) {
+			no_text = ':(';
+		}
+		if (no_counter > 3) {
+			hide_no_button = true;
+			no_text = 'No choice now!';
+		}
 	}
 </script>
 
@@ -183,9 +200,14 @@
 			<div class="animate-bounce variant-filled-success rounded-full">
 				<button on:click={() => fifth_transition()} class="w-full">Yes ❤️</button>
 			</div>
-			<div class="variant-filled-error rounded-full" class:animate-shake={no_button_shake}>
+			<div
+				class="variant-filled-error rounded-full"
+				class:animate-shake={no_button_shake}
+				class:invisible={hide_no_button}
+			>
 				<button id="no_button" on:click={() => shake_button()} class="w-full">No 👎</button>
 			</div>
+			<h2 class:invisible={hide_no_text}>{no_text}</h2>
 		</div>
 	</div>
 
