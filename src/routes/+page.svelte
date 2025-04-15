@@ -34,6 +34,13 @@
 		section4 = new Section(4, true, false, false);
 		section5 = new Section(5, true, false, false);
 		section6 = new Section(6, true, false, false);
+
+		// Reset these
+		no_button_shake = false;
+		no_counter = 0;
+		hide_no_text = true;
+		hide_no_button = false;
+		no_text = 'Hey!!!';
 	}
 
 	// just hard coding this because idk how any of this works
@@ -144,7 +151,7 @@
 
 	<div
 		id="section2"
-		class="absolute"
+		class="absolute flex space-x-5 justify-center items-center"
 		class:animate-slide-in={section2.slide_in}
 		class:invisible={section2.hide}
 		class:animate-slide-out={section2.slide_out}
@@ -160,7 +167,7 @@
 
 	<div
 		id="section3"
-		class="absolute"
+		class="absolute flex space-x-5 justify-center items-center"
 		class:animate-slide-in={section3.slide_in}
 		class:invisible={section3.hide}
 		class:animate-slide-out={section3.slide_out}
@@ -175,7 +182,7 @@
 
 	<div
 		id="section4"
-		class="absolute"
+		class="absolute flex space-x-5 justify-center items-center"
 		class:animate-slide-in={section4.slide_in}
 		class:invisible={section4.hide}
 		class:animate-slide-out={section4.slide_out}
@@ -190,7 +197,7 @@
 
 	<div
 		id="section5"
-		class="absolute"
+		class="absolute flex space-x-5 justify-center items-center"
 		class:animate-slide-in={section5.slide_in}
 		class:invisible={section5.hide}
 		class:animate-slide-out={section5.slide_out}
