@@ -154,7 +154,7 @@
 	}
 </script>
 
-<div class="h-screen flex space-x-5 justify-center items-center">
+<div class="h-screen flex space-x-5 justify-center items-center w-full">
 	<div
 		id="section1"
 		class="absolute flex space-x-5 justify-center items-center"
@@ -174,7 +174,7 @@
 
 	<div
 		id="section2"
-		class="absolute flex space-x-5 justify-center items-center"
+		class="absolute flex space-x-5 justify-center items-center min-w-full"
 		class:animate-slide-in={section2.slide_in}
 		class:invisible={section2.hide}
 		class:animate-slide-out={section2.slide_out}
@@ -283,6 +283,6 @@
 	</div>
 </div>
 
-<div class="absolute left-0 top-0">
+<div class="absolute left-0 top-0 w-full">
 	<button on:click={reset}>Reset</button>
 </div>
