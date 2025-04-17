@@ -1,11 +1,16 @@
 <script lang="ts">
-	const imgUrl = new URL('../../static/images/benji_bed_solo.jpg', import.meta.url).href;
+	const benji_chilling = new URL('../../static/images/benji_bed_solo.jpg', import.meta.url).href;
+	const franklin_whiskey = new URL('../../static/images/cats/franklin.jpg', import.meta.url).href;
+	const two_rug = new URL('../../static/images/cats/two_rug.jpg', import.meta.url).href;
 
 	class Section {
 		id: number;
 		hide: boolean;
 		slide_out: boolean;
 		slide_in: boolean;
+		image_1: boolean = false;
+		image_2: boolean = false;
+		image_3: boolean = false;
 
 		constructor(id: number, hide: boolean, slide_out: boolean, slide_in: boolean) {
 			this.id = id;
@@ -66,6 +71,21 @@
 				section2.hide = true;
 			}, 1000);
 		}
+		if (!section3.image_1) {
+			setTimeout(() => {
+				section3.image_1 = true;
+			}, 1200);
+		}
+		if (!section3.image_2) {
+			setTimeout(() => {
+				section3.image_2 = true;
+			}, 1300);
+		}
+		if (!section3.image_3) {
+			setTimeout(() => {
+				section3.image_3 = true;
+			}, 1400);
+		}
 		section3.hide = false;
 		section3.slide_in = true;
 	}
@@ -77,6 +97,9 @@
 		if (!section3.hide) {
 			setTimeout(() => {
 				section3.hide = true;
+				section3.image_1 = false;
+				section3.image_2 = false;
+				section3.image_3 = false;
 			}, 1000);
 		}
 		section4.hide = false;
@@ -157,8 +180,7 @@
 		class:animate-slide-out={section2.slide_out}
 	>
 		<div class="space-y-5 text-center">
-			<img alt="benji" src={imgUrl} width="200" height="300" />
-			<h1 class="h1">I'm the second section</h1>
+			<h1 class="h1">So it's been a couple years now...</h1>
 			<div class="animate-bounce variant-filled-secondary rounded-full">
 				<button on:click={() => second_transition()} class="w-full">Click me!</button>
 			</div>
@@ -173,12 +195,42 @@
 		class:animate-slide-out={section3.slide_out}
 	>
 		<div class="space-y-5 text-center">
-			<h1 class="h1">I'm the third section</h1>
+			<h1 class="h1">With a couple of cats</h1>
 			<div class="variant-filled-secondary rounded-full">
 				<button on:click={() => third_transition()} class="w-full">Click me!</button>
 			</div>
 		</div>
 	</div>
+	<img
+		class="absolute top-10 left-0 rounded-3xl"
+		class:animate-slide-in={section3.image_1}
+		class:invisible={!section3.image_1}
+		class:animate-slide-out={section3.slide_out}
+		alt="benji"
+		src={benji_chilling}
+		width="200"
+		height="300"
+	/>
+	<img
+		class="absolute top-10 right-0 rounded-3xl"
+		class:animate-slide-in={section3.image_2}
+		class:invisible={!section3.image_2}
+		class:animate-slide-out={section3.slide_out}
+		alt="franklin"
+		src={franklin_whiskey}
+		width="200"
+		height="300"
+	/>
+	<img
+		class="absolute bottom-5 left-15 rounded-3xl"
+		class:animate-slide-in={section3.image_3}
+		class:invisible={!section3.image_3}
+		class:animate-slide-out={section3.slide_out}
+		alt="two_rug"
+		src={two_rug}
+		width="200"
+		height="300"
+	/>
 
 	<div
 		id="section4"
