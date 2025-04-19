@@ -8,7 +8,12 @@
 	const snuggle_bed = new URL('../../static/images/benji_snuggle1.jpg', import.meta.url).href;
 	const franklin_snuggle = new URL('../../static/images/franklin_snuggle.jpg', import.meta.url)
 		.href;
-
+	// lina + me :)
+	const teletubbies = new URL('../../static/images/us/teletubbies.jpg', import.meta.url).href;
+	const wicked = new URL('../../static/images/us/wicked.jpg', import.meta.url).href;
+	const dinner = new URL('../../static/images/us/dinner.jpg', import.meta.url).href;
+	const cherries = new URL('../../static/images/cherries.jpg', import.meta.url).href;
+	const profile = new URL('../../static/images/prof.JPG', import.meta.url).href;
 	// wedding images
 	const blue = new URL('../../static/images/weddings/blue3.jpg', import.meta.url).href;
 	const orange = new URL('../../static/images/weddings/orange1.jpg', import.meta.url).href;
@@ -24,6 +29,7 @@
 		image_2: boolean = false;
 		image_3: boolean = false;
 		image_4: boolean = false;
+		image_5: boolean = false;
 
 		constructor(id: number, hide: boolean, slide_out: boolean, slide_in: boolean) {
 			this.id = id;
@@ -41,6 +47,7 @@
 	let section6 = new Section(6, true, false, false);
 	let section7 = new Section(7, true, false, false);
 	let section8 = new Section(8, true, false, false);
+	// Red button handling
 	let no_button_shake = false;
 	let no_counter = 0;
 	let hide_no_text = true;
@@ -67,7 +74,7 @@
 
 	// just hard coding this because idk how any of this works
 	function first_transition() {
-		console.log('First transition');
+		console.log('To years page');
 		section1.slide_out = true;
 
 		if (!section1.hide) {
@@ -80,7 +87,7 @@
 	}
 
 	function second_transition() {
-		console.log('Second transition');
+		console.log('To cats page');
 		section2.slide_out = true;
 
 		if (!section2.hide) {
@@ -108,7 +115,7 @@
 	}
 
 	function third_transition() {
-		console.log('Third transition');
+		console.log('To more cats');
 		section3.slide_out = true;
 
 		if (!section3.hide) {
@@ -139,7 +146,7 @@
 	}
 
 	function fourth_transition() {
-		console.log('Fourth transition');
+		console.log('to as do i');
 		section4.slide_out = true;
 
 		if (!section4.hide) {
@@ -170,12 +177,17 @@
 				section5.image_4 = true;
 			}, 1400);
 		}
+		if (!section5.image_5) {
+			setTimeout(() => {
+				section5.image_5 = true;
+			}, 1800);
+		}
 		section5.hide = false;
 		section5.slide_in = true;
 	}
 
 	function fifth_transition() {
-		console.log('Fifth transition');
+		console.log('to weddings');
 		section5.slide_out = true;
 
 		if (!section5.hide) {
@@ -185,6 +197,7 @@
 				section5.image_2 = false;
 				section5.image_3 = false;
 				section5.image_4 = false;
+				section5.image_5 = false;
 			}, 1000);
 		}
 		if (!section6.image_1) {
@@ -212,7 +225,7 @@
 	}
 
 	function sixth_transition() {
-		console.log('Sixth transition');
+		console.log('to question');
 		section6.slide_out = true;
 
 		if (!section6.hide) {
@@ -229,7 +242,7 @@
 	}
 
 	function seventh_transition() {
-		console.log('Seventh transition');
+		console.log('end scene');
 		section7.slide_out = true;
 
 		if (!section7.hide) {
@@ -400,6 +413,56 @@
 			</div>
 		</div>
 	</div>
+	<img
+		class="absolute top-11 left-0 rounded-3xl"
+		class:animate-slide-in={section5.image_1}
+		class:invisible={!section5.image_1}
+		class:animate-slide-out={section5.slide_out}
+		alt="wicked"
+		src={wicked}
+		width="200"
+		height="300"
+	/>
+	<img
+		class="absolute top-11 right-0 rounded-3xl"
+		class:animate-slide-in={section5.image_2}
+		class:invisible={!section5.image_2}
+		class:animate-slide-out={section5.slide_out}
+		alt="dinner"
+		src={dinner}
+		width="200"
+		height="300"
+	/>
+	<img
+		class="absolute bottom-10 left-3 rounded-3xl"
+		class:animate-slide-in={section5.image_3}
+		class:invisible={!section5.image_3}
+		class:animate-slide-out={section5.slide_out}
+		alt="cherries"
+		src={cherries}
+		width="200"
+		height="300"
+	/>
+	<img
+		class="absolute bottom-10 right-3 rounded-3xl"
+		class:animate-slide-in={section5.image_4}
+		class:invisible={!section5.image_4}
+		class:animate-slide-out={section5.slide_out}
+		alt="teletubbies"
+		src={teletubbies}
+		width="200"
+		height="300"
+	/>
+	<img
+		class="absolute top-10 left-15 rounded-3xl"
+		class:animate-slide-in={section5.image_5}
+		class:invisible={!section5.image_5}
+		class:animate-slide-out={section5.slide_out}
+		alt="profile"
+		src={profile}
+		width="200"
+		height="300"
+	/>
 
 	<div
 		id="section6"
@@ -409,8 +472,8 @@
 		class:animate-slide-out={section6.slide_out}
 	>
 		<div class="space-y-5 text-center">
-			<h1 class="h1">And now we've been to some weddings ourselves</h1>
-			<h1 class="h1">so it only seems right to ask</h1>
+			<h3 class="h3">And now that we've been to some weddings ourselves</h3>
+			<h3 class="h3">it only seems right to ask</h3>
 			<div class="variant-filled-secondary rounded-full">
 				<button on:click={() => sixth_transition()} class="w-full">Click me!</button>
 			</div>
