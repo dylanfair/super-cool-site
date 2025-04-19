@@ -3,6 +3,12 @@
 	const benji_chilling = new URL('../../static/images/benji_bed_solo.jpg', import.meta.url).href;
 	const franklin_whiskey = new URL('../../static/images/cats/franklin.jpg', import.meta.url).href;
 	const two_rug = new URL('../../static/images/cats/two_rug.jpg', import.meta.url).href;
+	// lina + cat images
+	const snuggle_chair = new URL('../../static/images/benji_snuggle.jpg', import.meta.url).href;
+	const snuggle_bed = new URL('../../static/images/benji_snuggle1.jpg', import.meta.url).href;
+	const franklin_snuggle = new URL('../../static/images/franklin_snuggle.jpg', import.meta.url)
+		.href;
+
 	// wedding images
 	const blue = new URL('../../static/images/weddings/blue3.jpg', import.meta.url).href;
 	const orange = new URL('../../static/images/weddings/orange1.jpg', import.meta.url).href;
@@ -33,6 +39,8 @@
 	let section4 = new Section(4, true, false, false);
 	let section5 = new Section(5, true, false, false);
 	let section6 = new Section(6, true, false, false);
+	let section7 = new Section(7, true, false, false);
+	let section8 = new Section(8, true, false, false);
 	let no_button_shake = false;
 	let no_counter = 0;
 	let hide_no_text = true;
@@ -46,6 +54,8 @@
 		section4 = new Section(4, true, false, false);
 		section5 = new Section(5, true, false, false);
 		section6 = new Section(6, true, false, false);
+		section7 = new Section(7, true, false, false);
+		section8 = new Section(8, true, false, false);
 
 		// Reset these
 		no_button_shake = false;
@@ -124,11 +134,6 @@
 				section4.image_3 = true;
 			}, 1400);
 		}
-		if (!section4.image_4) {
-			setTimeout(() => {
-				section4.image_4 = true;
-			}, 1400);
-		}
 		section4.hide = false;
 		section4.slide_in = true;
 	}
@@ -143,8 +148,27 @@
 				section4.image_1 = false;
 				section4.image_2 = false;
 				section4.image_3 = false;
-				section4.image_4 = false;
 			}, 1000);
+		}
+		if (!section5.image_1) {
+			setTimeout(() => {
+				section5.image_1 = true;
+			}, 1200);
+		}
+		if (!section5.image_2) {
+			setTimeout(() => {
+				section5.image_2 = true;
+			}, 1300);
+		}
+		if (!section5.image_3) {
+			setTimeout(() => {
+				section5.image_3 = true;
+			}, 1400);
+		}
+		if (!section5.image_4) {
+			setTimeout(() => {
+				section5.image_4 = true;
+			}, 1400);
 		}
 		section5.hide = false;
 		section5.slide_in = true;
@@ -157,10 +181,64 @@
 		if (!section5.hide) {
 			setTimeout(() => {
 				section5.hide = true;
+				section5.image_1 = false;
+				section5.image_2 = false;
+				section5.image_3 = false;
+				section5.image_4 = false;
 			}, 1000);
+		}
+		if (!section6.image_1) {
+			setTimeout(() => {
+				section6.image_1 = true;
+			}, 1200);
+		}
+		if (!section6.image_2) {
+			setTimeout(() => {
+				section6.image_2 = true;
+			}, 1300);
+		}
+		if (!section6.image_3) {
+			setTimeout(() => {
+				section6.image_3 = true;
+			}, 1400);
+		}
+		if (!section6.image_4) {
+			setTimeout(() => {
+				section6.image_4 = true;
+			}, 1400);
 		}
 		section6.hide = false;
 		section6.slide_in = true;
+	}
+
+	function sixth_transition() {
+		console.log('Sixth transition');
+		section6.slide_out = true;
+
+		if (!section6.hide) {
+			setTimeout(() => {
+				section6.hide = true;
+				section6.image_1 = false;
+				section6.image_2 = false;
+				section6.image_3 = false;
+				section6.image_4 = false;
+			}, 1000);
+		}
+		section7.hide = false;
+		section7.slide_in = true;
+	}
+
+	function seventh_transition() {
+		console.log('Seventh transition');
+		section7.slide_out = true;
+
+		if (!section7.hide) {
+			setTimeout(() => {
+				section7.hide = true;
+			}, 1000);
+		}
+		section8.hide = false;
+		section8.slide_in = true;
 	}
 
 	function shake_button() {
@@ -271,50 +349,39 @@
 		class:animate-slide-out={section4.slide_out}
 	>
 		<div class="space-y-5 text-center">
-			<h1 class="h1">And now we've been to some weddings ourselves</h1>
-			<h1 class="h1">so it only seems right to ask</h1>
+			<h1 class="h1">Who DEFINITELY love you</h1>
 			<div class="variant-filled-secondary rounded-full">
 				<button on:click={() => fourth_transition()} class="w-full">Click me!</button>
 			</div>
 		</div>
 	</div>
 	<img
-		class="absolute top-10 left-0 rounded-3xl"
+		class="absolute top-10 left-15 rounded-3xl"
 		class:animate-slide-in={section4.image_1}
 		class:invisible={!section4.image_1}
 		class:animate-slide-out={section4.slide_out}
-		alt="blue"
-		src={blue}
+		alt="franklin_snuggle"
+		src={franklin_snuggle}
 		width="200"
 		height="300"
 	/>
 	<img
-		class="absolute top-10 right-0 rounded-3xl"
-		class:animate-slide-in={section4.image_2}
-		class:invisible={!section4.image_2}
-		class:animate-slide-out={section4.slide_out}
-		alt="yellow"
-		src={yellow}
-		width="200"
-		height="300"
-	/>
-	<img
-		class="absolute bottom-5 left-3 rounded-3xl"
+		class="absolute bottom-5 left-5 rounded-3xl"
 		class:animate-slide-in={section4.image_3}
 		class:invisible={!section4.image_3}
 		class:animate-slide-out={section4.slide_out}
-		alt="poloroid"
-		src={poloroid}
+		alt="benji_bed"
+		src={snuggle_bed}
 		width="200"
 		height="300"
 	/>
 	<img
-		class="absolute bottom-5 right-3 rounded-3xl"
-		class:animate-slide-in={section4.image_4}
-		class:invisible={!section4.image_4}
+		class="absolute bottom-5 right-5 rounded-3xl"
+		class:animate-slide-in={section4.image_2}
+		class:invisible={!section4.image_2}
 		class:animate-slide-out={section4.slide_out}
-		alt="orange"
-		src={orange}
+		alt="benji_chair"
+		src={snuggle_chair}
 		width="200"
 		height="300"
 	/>
@@ -327,9 +394,80 @@
 		class:animate-slide-out={section5.slide_out}
 	>
 		<div class="space-y-5 text-center">
+			<h1 class="h1">As do I :)</h1>
+			<div class="variant-filled-secondary rounded-full">
+				<button on:click={() => fifth_transition()} class="w-full">Click me!</button>
+			</div>
+		</div>
+	</div>
+
+	<div
+		id="section6"
+		class="absolute flex space-x-5 justify-center items-center"
+		class:animate-slide-in={section6.slide_in}
+		class:invisible={section6.hide}
+		class:animate-slide-out={section6.slide_out}
+	>
+		<div class="space-y-5 text-center">
+			<h1 class="h1">And now we've been to some weddings ourselves</h1>
+			<h1 class="h1">so it only seems right to ask</h1>
+			<div class="variant-filled-secondary rounded-full">
+				<button on:click={() => sixth_transition()} class="w-full">Click me!</button>
+			</div>
+		</div>
+	</div>
+	<img
+		class="absolute top-10 left-0 rounded-3xl"
+		class:animate-slide-in={section6.image_1}
+		class:invisible={!section6.image_1}
+		class:animate-slide-out={section6.slide_out}
+		alt="blue"
+		src={blue}
+		width="200"
+		height="300"
+	/>
+	<img
+		class="absolute top-10 right-0 rounded-3xl"
+		class:animate-slide-in={section6.image_2}
+		class:invisible={!section6.image_2}
+		class:animate-slide-out={section6.slide_out}
+		alt="yellow"
+		src={yellow}
+		width="200"
+		height="300"
+	/>
+	<img
+		class="absolute bottom-5 left-3 rounded-3xl"
+		class:animate-slide-in={section6.image_3}
+		class:invisible={!section6.image_3}
+		class:animate-slide-out={section6.slide_out}
+		alt="poloroid"
+		src={poloroid}
+		width="200"
+		height="300"
+	/>
+	<img
+		class="absolute bottom-5 right-3 rounded-3xl"
+		class:animate-slide-in={section6.image_4}
+		class:invisible={!section6.image_4}
+		class:animate-slide-out={section6.slide_out}
+		alt="orange"
+		src={orange}
+		width="200"
+		height="300"
+	/>
+
+	<div
+		id="section7"
+		class="absolute flex space-x-5 justify-center items-center"
+		class:animate-slide-in={section7.slide_in}
+		class:invisible={section7.hide}
+		class:animate-slide-out={section7.slide_out}
+	>
+		<div class="space-y-5 text-center">
 			<h1 class="h1">Will you marry me?</h1>
 			<div class="animate-bounce variant-filled-success rounded-full">
-				<button on:click={() => fifth_transition()} class="w-full">Yes ❤️</button>
+				<button on:click={() => seventh_transition()} class="w-full">Yes ❤️</button>
 			</div>
 			<div
 				class="variant-filled-error rounded-full"
@@ -343,11 +481,11 @@
 	</div>
 
 	<div
-		id="section6"
+		id="section8"
 		class="absolute"
-		class:animate-slide-in={section6.slide_in}
-		class:invisible={section6.hide}
-		class:animate-slide-out={section6.slide_out}
+		class:animate-slide-in={section8.slide_in}
+		class:invisible={section8.hide}
+		class:animate-slide-out={section8.slide_out}
 	>
 		<div class="space-y-5 text-center">
 			<h1 class="h1">yay :)</h1>
