@@ -1,7 +1,13 @@
 <script lang="ts">
+	// cat images
 	const benji_chilling = new URL('../../static/images/benji_bed_solo.jpg', import.meta.url).href;
 	const franklin_whiskey = new URL('../../static/images/cats/franklin.jpg', import.meta.url).href;
 	const two_rug = new URL('../../static/images/cats/two_rug.jpg', import.meta.url).href;
+	// wedding images
+	const blue = new URL('../../static/images/weddings/blue3.jpg', import.meta.url).href;
+	const orange = new URL('../../static/images/weddings/orange1.jpg', import.meta.url).href;
+	const poloroid = new URL('../../static/images/weddings/poloroid.jpg', import.meta.url).href;
+	const yellow = new URL('../../static/images/weddings/yellow1.jpg', import.meta.url).href;
 
 	class Section {
 		id: number;
@@ -11,6 +17,7 @@
 		image_1: boolean = false;
 		image_2: boolean = false;
 		image_3: boolean = false;
+		image_4: boolean = false;
 
 		constructor(id: number, hide: boolean, slide_out: boolean, slide_in: boolean) {
 			this.id = id;
@@ -102,6 +109,26 @@
 				section3.image_3 = false;
 			}, 1000);
 		}
+		if (!section4.image_1) {
+			setTimeout(() => {
+				section4.image_1 = true;
+			}, 1200);
+		}
+		if (!section4.image_2) {
+			setTimeout(() => {
+				section4.image_2 = true;
+			}, 1300);
+		}
+		if (!section4.image_3) {
+			setTimeout(() => {
+				section4.image_3 = true;
+			}, 1400);
+		}
+		if (!section4.image_4) {
+			setTimeout(() => {
+				section4.image_4 = true;
+			}, 1400);
+		}
 		section4.hide = false;
 		section4.slide_in = true;
 	}
@@ -113,6 +140,10 @@
 		if (!section4.hide) {
 			setTimeout(() => {
 				section4.hide = true;
+				section4.image_1 = false;
+				section4.image_2 = false;
+				section4.image_3 = false;
+				section4.image_4 = false;
 			}, 1000);
 		}
 		section5.hide = false;
@@ -240,12 +271,53 @@
 		class:animate-slide-out={section4.slide_out}
 	>
 		<div class="space-y-5 text-center">
-			<h1 class="h1">I'm the fourth section</h1>
+			<h1 class="h1">And now we've been to some weddings ourselves</h1>
+			<h1 class="h1">so it only seems right to ask</h1>
 			<div class="variant-filled-secondary rounded-full">
 				<button on:click={() => fourth_transition()} class="w-full">Click me!</button>
 			</div>
 		</div>
 	</div>
+	<img
+		class="absolute top-10 left-0 rounded-3xl"
+		class:animate-slide-in={section4.image_1}
+		class:invisible={!section4.image_1}
+		class:animate-slide-out={section4.slide_out}
+		alt="blue"
+		src={blue}
+		width="200"
+		height="300"
+	/>
+	<img
+		class="absolute top-10 right-0 rounded-3xl"
+		class:animate-slide-in={section4.image_2}
+		class:invisible={!section4.image_2}
+		class:animate-slide-out={section4.slide_out}
+		alt="yellow"
+		src={yellow}
+		width="200"
+		height="300"
+	/>
+	<img
+		class="absolute bottom-5 left-3 rounded-3xl"
+		class:animate-slide-in={section4.image_3}
+		class:invisible={!section4.image_3}
+		class:animate-slide-out={section4.slide_out}
+		alt="poloroid"
+		src={poloroid}
+		width="200"
+		height="300"
+	/>
+	<img
+		class="absolute bottom-5 right-3 rounded-3xl"
+		class:animate-slide-in={section4.image_4}
+		class:invisible={!section4.image_4}
+		class:animate-slide-out={section4.slide_out}
+		alt="orange"
+		src={orange}
+		width="200"
+		height="300"
+	/>
 
 	<div
 		id="section5"
