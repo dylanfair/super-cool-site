@@ -53,6 +53,9 @@
 	let hide_no_text = true;
 	let hide_no_button = false;
 	let no_text = 'Hey!!!';
+	// picture sizes
+	const width = 100;
+	const height = 100;
 
 	function reset() {
 		section1 = new Section(1, false, false, false);
@@ -330,8 +333,8 @@
 		class:animate-slide-out={section3.slide_out}
 		alt="benji"
 		src={benji_chilling}
-		width="200"
-		height="300"
+		{width}
+		{height}
 	/>
 	<img
 		class="absolute top-10 right-0 rounded-3xl"
@@ -340,8 +343,8 @@
 		class:animate-slide-out={section3.slide_out}
 		alt="franklin"
 		src={franklin_whiskey}
-		width="200"
-		height="300"
+		{width}
+		{height}
 	/>
 	<img
 		class="absolute bottom-5 left-15 rounded-3xl"
@@ -350,8 +353,8 @@
 		class:animate-slide-out={section3.slide_out}
 		alt="two_rug"
 		src={two_rug}
-		width="200"
-		height="300"
+		{width}
+		{height}
 	/>
 
 	<div
@@ -375,8 +378,8 @@
 		class:animate-slide-out={section4.slide_out}
 		alt="franklin_snuggle"
 		src={franklin_snuggle}
-		width="200"
-		height="300"
+		{width}
+		{height}
 	/>
 	<img
 		class="absolute bottom-5 left-5 rounded-3xl"
@@ -385,8 +388,8 @@
 		class:animate-slide-out={section4.slide_out}
 		alt="benji_bed"
 		src={snuggle_bed}
-		width="200"
-		height="300"
+		{width}
+		{height}
 	/>
 	<img
 		class="absolute bottom-5 right-5 rounded-3xl"
@@ -395,8 +398,8 @@
 		class:animate-slide-out={section4.slide_out}
 		alt="benji_chair"
 		src={snuggle_chair}
-		width="200"
-		height="300"
+		{width}
+		{height}
 	/>
 
 	<div
@@ -420,8 +423,8 @@
 		class:animate-slide-out={section5.slide_out}
 		alt="wicked"
 		src={wicked}
-		width="200"
-		height="300"
+		{width}
+		{height}
 	/>
 	<img
 		class="absolute top-11 right-0 rounded-3xl"
@@ -430,8 +433,8 @@
 		class:animate-slide-out={section5.slide_out}
 		alt="dinner"
 		src={dinner}
-		width="200"
-		height="300"
+		{width}
+		{height}
 	/>
 	<img
 		class="absolute bottom-10 left-3 rounded-3xl"
@@ -440,8 +443,8 @@
 		class:animate-slide-out={section5.slide_out}
 		alt="cherries"
 		src={cherries}
-		width="200"
-		height="300"
+		{width}
+		{height}
 	/>
 	<img
 		class="absolute bottom-10 right-3 rounded-3xl"
@@ -450,8 +453,8 @@
 		class:animate-slide-out={section5.slide_out}
 		alt="teletubbies"
 		src={teletubbies}
-		width="200"
-		height="300"
+		{width}
+		{height}
 	/>
 	<img
 		class="absolute top-10 left-15 rounded-3xl"
@@ -460,8 +463,8 @@
 		class:animate-slide-out={section5.slide_out}
 		alt="profile"
 		src={profile}
-		width="200"
-		height="300"
+		{width}
+		{height}
 	/>
 
 	<div
@@ -486,8 +489,8 @@
 		class:animate-slide-out={section6.slide_out}
 		alt="blue"
 		src={blue}
-		width="200"
-		height="300"
+		{width}
+		{height}
 	/>
 	<img
 		class="absolute top-10 right-0 rounded-3xl"
@@ -496,8 +499,8 @@
 		class:animate-slide-out={section6.slide_out}
 		alt="yellow"
 		src={yellow}
-		width="200"
-		height="300"
+		{width}
+		{height}
 	/>
 	<img
 		class="absolute bottom-5 left-3 rounded-3xl"
@@ -506,8 +509,8 @@
 		class:animate-slide-out={section6.slide_out}
 		alt="poloroid"
 		src={poloroid}
-		width="200"
-		height="300"
+		{width}
+		{height}
 	/>
 	<img
 		class="absolute bottom-5 right-3 rounded-3xl"
@@ -516,8 +519,8 @@
 		class:animate-slide-out={section6.slide_out}
 		alt="orange"
 		src={orange}
-		width="200"
-		height="300"
+		{width}
+		{height}
 	/>
 
 	<div
