@@ -12,8 +12,7 @@
 	const teletubbies = new URL('../../static/images/us/teletubbies.jpg', import.meta.url).href;
 	const wicked = new URL('../../static/images/us/wicked.jpg', import.meta.url).href;
 	const dinner = new URL('../../static/images/us/dinner.jpg', import.meta.url).href;
-	const cherries = new URL('../../static/images/cherries.jpg', import.meta.url).href;
-	const profile = new URL('../../static/images/prof.JPG', import.meta.url).href;
+	const escape = new URL('../../static/images/us/venus2.jpg', import.meta.url).href;
 	// wedding images
 	const blue = new URL('../../static/images/weddings/blue3.jpg', import.meta.url).href;
 	const orange = new URL('../../static/images/weddings/orange1.jpg', import.meta.url).href;
@@ -180,11 +179,6 @@
 				section5.image_4 = true;
 			}, 1400);
 		}
-		if (!section5.image_5) {
-			setTimeout(() => {
-				section5.image_5 = true;
-			}, 1800);
-		}
 		section5.hide = false;
 		section5.slide_in = true;
 	}
@@ -200,7 +194,6 @@
 				section5.image_2 = false;
 				section5.image_3 = false;
 				section5.image_4 = false;
-				section5.image_5 = false;
 			}, 1000);
 		}
 		if (!section6.image_1) {
@@ -441,8 +434,8 @@
 		class:animate-slide-in={section5.image_3}
 		class:invisible={!section5.image_3}
 		class:animate-slide-out={section5.slide_out}
-		alt="cherries"
-		src={cherries}
+		alt="escape"
+		src={escape}
 		{width}
 		{height}
 	/>
@@ -453,16 +446,6 @@
 		class:animate-slide-out={section5.slide_out}
 		alt="teletubbies"
 		src={teletubbies}
-		{width}
-		{height}
-	/>
-	<img
-		class="absolute top-10 left-15 rounded-3xl"
-		class:animate-slide-in={section5.image_5}
-		class:invisible={!section5.image_5}
-		class:animate-slide-out={section5.slide_out}
-		alt="profile"
-		src={profile}
 		{width}
 		{height}
 	/>
