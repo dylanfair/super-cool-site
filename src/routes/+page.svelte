@@ -537,7 +537,8 @@
 		class:animate-slide-out={section8.slide_out}
 	>
 		<div class="space-y-5 text-center">
-			<h1 class="h1">yay :)</h1>
+			<h1 class="h1">yay! :)</h1>
+			<h1 class="h1">love you baby!</h1>
 		</div>
 	</div>
 </div>
