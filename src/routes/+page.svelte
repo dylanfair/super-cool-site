@@ -12,7 +12,7 @@
 	const teletubbies = new URL('../../static/images/us/teletubbies.jpg', import.meta.url).href;
 	const wicked = new URL('../../static/images/us/wicked.jpg', import.meta.url).href;
 	const dinner = new URL('../../static/images/us/dinner.jpg', import.meta.url).href;
-	const escape = new URL('../../static/images/us/venus2.jpg', import.meta.url).href;
+	const yellow_dance = new URL('../../static/images/yellow4.jpg', import.meta.url).href;
 	// wedding images
 	const blue = new URL('../../static/images/weddings/blue3.jpg', import.meta.url).href;
 	const orange = new URL('../../static/images/weddings/orange1.jpg', import.meta.url).href;
@@ -53,8 +53,8 @@
 	let hide_no_button = false;
 	let no_text = 'Hey!!!';
 	// picture sizes
-	const width = '35%';
-	const height = '35%';
+	const width = '40%';
+	const height = '40%';
 
 	function reset() {
 		section1 = new Section(1, false, false, false);
@@ -434,8 +434,8 @@
 		class:animate-slide-in={section5.image_3}
 		class:invisible={!section5.image_3}
 		class:animate-slide-out={section5.slide_out}
-		alt="escape"
-		src={escape}
+		alt="yellow_dance"
+		src={yellow_dance}
 		{width}
 		{height}
 	/>
