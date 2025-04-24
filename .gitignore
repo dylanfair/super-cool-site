@@ -22,3 +22,5 @@ vite.config.ts.timestamp-*
 
 # images for now
 static/images/
+
+*Zone.Identifier
