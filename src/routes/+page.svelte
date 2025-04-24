@@ -299,8 +299,8 @@
 	>
 		<div class="space-y-5 text-center">
 			<h1 class="h1">So it's been a couple years now...</h1>
-			<div class="animate-bounce variant-filled-secondary rounded-full">
-				<button on:click={() => second_transition()} class="w-full">Click me!</button>
+			<div class="variant-filled-secondary rounded-full">
+				<button on:click={() => second_transition()} class="w-full">Almost three?!</button>
 			</div>
 		</div>
 	</div>
@@ -315,7 +315,7 @@
 		<div class="space-y-5 text-center">
 			<h1 class="h1">With a couple of cats</h1>
 			<div class="variant-filled-secondary rounded-full">
-				<button on:click={() => third_transition()} class="w-full">Click me!</button>
+				<button on:click={() => third_transition()} class="w-full">Aren't they something</button>
 			</div>
 		</div>
 	</div>
@@ -360,7 +360,7 @@
 		<div class="space-y-5 text-center">
 			<h1 class="h1">Who DEFINITELY love you</h1>
 			<div class="variant-filled-secondary rounded-full">
-				<button on:click={() => fourth_transition()} class="w-full">Click me!</button>
+				<button on:click={() => fourth_transition()} class="w-full">I get it</button>
 			</div>
 		</div>
 	</div>
@@ -405,7 +405,7 @@
 		<div class="space-y-5 text-center">
 			<h1 class="h1">As do I :)</h1>
 			<div class="variant-filled-secondary rounded-full">
-				<button on:click={() => fifth_transition()} class="w-full">Click me!</button>
+				<button on:click={() => fifth_transition()} class="w-full">Aww shucks!</button>
 			</div>
 		</div>
 	</div>
@@ -459,9 +459,11 @@
 	>
 		<div class="space-y-5 text-center">
 			<h3 class="h3">And now that we've been to some weddings ourselves</h3>
-			<h3 class="h3">it only seems right to ask</h3>
+			<!-- <h3 class="h3">it only seems right to ask</h3> -->
 			<div class="variant-filled-secondary rounded-full">
-				<button on:click={() => sixth_transition()} class="w-full">Click me!</button>
+				<button on:click={() => sixth_transition()} class="w-full"
+					>It only seems right to ask</button
+				>
 			</div>
 		</div>
 	</div>
