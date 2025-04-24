@@ -53,8 +53,8 @@
 	let hide_no_button = false;
 	let no_text = 'Hey!!!';
 	// picture sizes
-	const width = 150;
-	const height = 150;
+	const width = '35%';
+	const height = '35%';
 
 	function reset() {
 		section1 = new Section(1, false, false, false);
