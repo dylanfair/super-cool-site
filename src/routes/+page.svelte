@@ -54,9 +54,9 @@
 	let no_text = 'Hey!!!';
 
 	// dynamic height based on screen size
-	let innerWidth = 0;
-	let innerHeight = 0;
-	$: size_condition = innerWidth * 1.33 <= innerHeight;
+	let outerWidth = 0;
+	let outerHeight = 0;
+	$: size_condition = outerHeight > outerWidth;
 
 	function reset() {
 		section1 = new Section(1, false, false, false);
@@ -274,7 +274,7 @@
 	}
 </script>
 
-<svelte:window bind:innerWidth bind:innerHeight />
+<svelte:window bind:outerWidth bind:outerHeight />
 
 <div class="h-screen flex space-x-5 justify-center items-center w-full">
 	<div
@@ -540,10 +540,10 @@
 </div>
 
 <style>
-	.mobile {
-		width: 40%;
-	}
 	.desktop {
 		width: 13%;
+	}
+	.mobile {
+		width: 40%;
 	}
 </style>
