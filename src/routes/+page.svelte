@@ -52,9 +52,11 @@
 	let hide_no_text = true;
 	let hide_no_button = false;
 	let no_text = 'Hey!!!';
-	// picture sizes
-	const width = '40%';
-	const height = '40%';
+
+	// dynamic height based on screen size
+	let innerWidth = 0;
+	let innerHeight = 0;
+	$: size_condition = innerWidth * 1.33 <= innerHeight;
 
 	function reset() {
 		section1 = new Section(1, false, false, false);
@@ -272,6 +274,8 @@
 	}
 </script>
 
+<svelte:window bind:innerWidth bind:innerHeight />
+
 <div class="h-screen flex space-x-5 justify-center items-center w-full">
 	<div
 		id="section1"
@@ -320,34 +324,31 @@
 		</div>
 	</div>
 	<img
-		class="absolute top-10 left-0 rounded-3xl"
+		class="absolute top-10 left-0 rounded-3xl desktop"
+		class:mobile={size_condition}
 		class:animate-slide-in={section3.image_1}
 		class:invisible={!section3.image_1}
 		class:animate-slide-out={section3.slide_out}
 		alt="benji"
 		src={benji_chilling}
-		{width}
-		{height}
 	/>
 	<img
-		class="absolute top-10 right-0 rounded-3xl"
+		class="absolute top-10 right-0 rounded-3xl desktop"
+		class:mobile={size_condition}
 		class:animate-slide-in={section3.image_2}
 		class:invisible={!section3.image_2}
 		class:animate-slide-out={section3.slide_out}
 		alt="franklin"
 		src={franklin_whiskey}
-		{width}
-		{height}
 	/>
 	<img
-		class="absolute bottom-5 left-15 rounded-3xl"
+		class="absolute bottom-5 left-15 rounded-3xl desktop"
+		class:mobile={size_condition}
 		class:animate-slide-in={section3.image_3}
 		class:invisible={!section3.image_3}
 		class:animate-slide-out={section3.slide_out}
 		alt="two_rug"
 		src={two_rug}
-		{width}
-		{height}
 	/>
 
 	<div
@@ -365,34 +366,31 @@
 		</div>
 	</div>
 	<img
-		class="absolute top-10 left-15 rounded-3xl"
+		class="absolute top-10 left-15 rounded-3xl desktop"
+		class:mobile={size_condition}
 		class:animate-slide-in={section4.image_1}
 		class:invisible={!section4.image_1}
 		class:animate-slide-out={section4.slide_out}
 		alt="franklin_snuggle"
 		src={franklin_snuggle}
-		{width}
-		{height}
 	/>
 	<img
-		class="absolute bottom-5 left-5 rounded-3xl"
+		class="absolute bottom-5 left-5 rounded-3xl desktop"
+		class:mobile={size_condition}
 		class:animate-slide-in={section4.image_3}
 		class:invisible={!section4.image_3}
 		class:animate-slide-out={section4.slide_out}
 		alt="benji_bed"
 		src={snuggle_bed}
-		{width}
-		{height}
 	/>
 	<img
-		class="absolute bottom-5 right-5 rounded-3xl"
+		class="absolute bottom-5 right-5 rounded-3xl desktop"
+		class:mobile={size_condition}
 		class:animate-slide-in={section4.image_2}
 		class:invisible={!section4.image_2}
 		class:animate-slide-out={section4.slide_out}
 		alt="benji_chair"
 		src={snuggle_chair}
-		{width}
-		{height}
 	/>
 
 	<div
@@ -402,52 +400,48 @@
 		class:invisible={section5.hide}
 		class:animate-slide-out={section5.slide_out}
 	>
-		<div class="space-y-5 text-center">
+		<dev class="space-y-5 text-center">
 			<h1 class="h1">As do I :)</h1>
 			<div class="variant-filled-secondary rounded-full">
 				<button on:click={() => fifth_transition()} class="w-full">Aww shucks!</button>
 			</div>
-		</div>
+		</dev>
 	</div>
 	<img
-		class="absolute top-11 left-0 rounded-3xl"
+		class="absolute top-11 left-0 rounded-3xl desktop"
+		class:mobile={size_condition}
 		class:animate-slide-in={section5.image_1}
 		class:invisible={!section5.image_1}
 		class:animate-slide-out={section5.slide_out}
 		alt="wicked"
 		src={wicked}
-		{width}
-		{height}
 	/>
 	<img
-		class="absolute top-11 right-0 rounded-3xl"
+		class="absolute top-11 right-0 rounded-3xl desktop"
+		class:mobile={size_condition}
 		class:animate-slide-in={section5.image_2}
 		class:invisible={!section5.image_2}
 		class:animate-slide-out={section5.slide_out}
 		alt="dinner"
 		src={dinner}
-		{width}
-		{height}
 	/>
 	<img
-		class="absolute bottom-10 left-3 rounded-3xl"
+		class="absolute bottom-10 left-3 rounded-3xl desktop"
+		class:mobile={size_condition}
 		class:animate-slide-in={section5.image_3}
 		class:invisible={!section5.image_3}
 		class:animate-slide-out={section5.slide_out}
 		alt="yellow_dance"
 		src={yellow_dance}
-		{width}
-		{height}
 	/>
 	<img
-		class="absolute bottom-10 right-3 rounded-3xl"
+		class="absolute bottom-10 right-3 rounded-3xl desktop"
+		class:mobile={size_condition}
 		class:animate-slide-in={section5.image_4}
 		class:invisible={!section5.image_4}
 		class:animate-slide-out={section5.slide_out}
 		alt="teletubbies"
 		src={teletubbies}
-		{width}
-		{height}
 	/>
 
 	<div
@@ -468,44 +462,40 @@
 		</div>
 	</div>
 	<img
-		class="absolute top-10 left-0 rounded-3xl"
+		class="absolute top-10 left-0 rounded-3xl desktop"
+		class:mobile={size_condition}
 		class:animate-slide-in={section6.image_1}
 		class:invisible={!section6.image_1}
 		class:animate-slide-out={section6.slide_out}
 		alt="blue"
 		src={blue}
-		{width}
-		{height}
 	/>
 	<img
-		class="absolute top-10 right-0 rounded-3xl"
+		class="absolute top-10 right-0 rounded-3xl desktop"
+		class:mobile={size_condition}
 		class:animate-slide-in={section6.image_2}
 		class:invisible={!section6.image_2}
 		class:animate-slide-out={section6.slide_out}
 		alt="yellow"
 		src={yellow}
-		{width}
-		{height}
 	/>
 	<img
-		class="absolute bottom-5 left-3 rounded-3xl"
+		class="absolute bottom-5 left-3 rounded-3xl desktop"
+		class:mobile={size_condition}
 		class:animate-slide-in={section6.image_3}
 		class:invisible={!section6.image_3}
 		class:animate-slide-out={section6.slide_out}
 		alt="poloroid"
 		src={poloroid}
-		{width}
-		{height}
 	/>
 	<img
-		class="absolute bottom-5 right-3 rounded-3xl"
+		class="absolute bottom-5 right-3 rounded-3xl desktop"
+		class:mobile={size_condition}
 		class:animate-slide-in={section6.image_4}
 		class:invisible={!section6.image_4}
 		class:animate-slide-out={section6.slide_out}
 		alt="orange"
 		src={orange}
-		{width}
-		{height}
 	/>
 
 	<div
@@ -548,3 +538,12 @@
 <div class="absolute left-0 top-0 w-full">
 	<button on:click={reset}>Reset</button>
 </div>
+
+<style>
+	.mobile {
+		width: 40%;
+	}
+	.desktop {
+		width: 13%;
+	}
+</style>
